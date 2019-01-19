@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>John's Favourite Colours</title>
+<style>
+.rectangle {
+  width: 100px;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+<h1>John's Favourite Colours</h1>
+<h2>A list of my all time favourite shades</h2>
+<div id="rectangleWrapper" style="padding: 50px; padding-bottom:0px;"></div>
+<script>
+const rDiv = document.getElementById("rectangleWrapper");
+const rectangles = [];
+console.log('Here are the rectangle IDs');
+for(let i=0; i<10;i++) {
+let rec = 
+document.createElement("div");
+let offset=61;
+if (i<4) {
+offset=54;
+}
+let colour= "#"+String.fromCharCode(i+offset)+"00000";
+rec.style.background = colour
+rec.innerText=rec.style.background;
+rec.classList.add("rectangle");
+rec.id="rec"+i;
+console.log(rec.id);
+rDiv.appendChild(rec);
+let p=document.createElement("P");
+p.innerText=colour;
+rDiv.appendChild(p);
+}
+</script>
+</body>
+</html>
